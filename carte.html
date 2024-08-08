@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte des clubs de National 1 / National 2 et National 3</title>
+	<!-- Primary Meta Tags -->
+	<meta name="title" content="Carte des clubs de National 1 / National 2 et National 3" />
+	<meta name="description" content="Découvrez tous les clubs de football de National 1, National 2 et National 3 en France grâce à cette carte interactive. Explorez facilement les emplacements des équipes et trouvez des informations détaillées sur chaque club." />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://ayrtonbardiot.fr/carte.html" />
+	<meta property="og:title" content="Carte des clubs de National 1 / National 2 et National 3" />
+	<meta property="og:description" content="Découvrez tous les clubs de football de National 1, National 2 et National 3 en France grâce à cette carte interactive. Explorez facilement les emplacements des équipes et trouvez des informations détaillées sur chaque club." />
+	<meta property="og:image" content="https://ayrtonbardiot.fr/image.png" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://ayrtonbardiot.fr/carte.html" />
+	<meta property="twitter:title" content="Carte des clubs de National 1 / National 2 et National 3" />
+	<meta property="twitter:description" content="Découvrez tous les clubs de football de National 1, National 2 et National 3 en France grâce à cette carte interactive. Explorez facilement les emplacements des équipes et trouvez des informations détaillées sur chaque club." />
+	<meta property="twitter:image" content="https://ayrtonbardiot.fr/image.png" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .button-container {
+            margin: 10px 0;
+        }
+        #map {
+            flex-grow: 1;
+            height: 100%; /* This is important for the flexbox to work correctly */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Carte interactive</h1>
+        <p>Appuyez sur les boutons ci-dessous pour afficher les clubs. Carte créée avec les données de la FFF.</p>
+        <ul id="errors">
+            
+        </ul>
+        <div class="button-container">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="nat1" data-champ="425640">
+                <label class="form-check-label" for="nat1">
+                National 1
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="nat2" data-champ="425637">
+                <label class="form-check-label" for="nat2">
+                National 2
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="nat3" data-champ="425638">
+                <label class="form-check-label" for="nat3">
+                National 3
+                </label>
+            </div>
+        </div>
+        <div id="map"></div>
+    </div>
+    <script src="script.js?v=2"></script>
+</body>
+</html>
